@@ -1,7 +1,8 @@
 /* General Styles */
 body {
     font-family: 'Merriweather', serif;
-    font-size: 1.1rem; /* Slightly larger, comfortable reading size */
+    font-size: 1.1rem;
+    background-color: #ffffff;
 }
 
 /* Header Styling */
@@ -12,12 +13,11 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    border-bottom: 3px solid #343a40; /* Underline */
-    display: inline-block;
-    padding-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #343a40;
     display: flex;
     justify-content: center;
+    padding-bottom: 10px;
 }
 
 /* Navbar */
@@ -37,13 +37,16 @@ body {
     padding: 0.5rem 1rem !important;
 }
 
+.nav-link.active {
+    color: red !important;
+}
+
 /* Cards Styling */
 .card-link {
     text-decoration: none;
     color: inherit;
 }
 
-/* General card hover effect */
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 10px;
@@ -52,14 +55,13 @@ body {
 }
 
 .card:hover {
-    transform: scale(1.05); /* Zoom effect */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Shadow effect */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Quiz card: Disable hover effect for the quiz page */
 .no-hover-effect:hover {
-    transform: none; /* Disable the zooming effect */
-    box-shadow: none; /* Disable the shadow effect */
+    transform: none;
+    box-shadow: none;
 }
 
 .card-body {
@@ -96,182 +98,222 @@ footer p {
     color: #343a40 !important;
 }
 
-/* General icon color */
+/* Icons */
 .contact-info i {
-    color: #000 !important; /* Default black color for all icons */
+    color: #000 !important;
 }
 
-/* Facebook and WhatsApp specific colors */
 .contact-info .fa-facebook {
-    color: #1877f2 !important; /* Facebook blue */
+    color: #1877f2 !important;
 }
 
 .contact-info .fa-whatsapp {
-    color: #25d366 !important; /* WhatsApp green */
+    color: #25d366 !important;
 }
 
-/* Hover effect for all icons */
 .contact-info a:hover i {
-    color: #000000; /* Hover effect for all icons (except specific ones) */
+    color: #000000;
 }
 
-/* Social Media Icons */
 .social-icons a {
     margin-right: 15px;
 }
 
-/* Styles for quiz interface */
-.quiz-container {
+/* === QUIZ PAGE === */
+body {
+    font-family: 'Merriweather', serif;
+    background-color: #ffffff;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    color: red !important;
+    font-size: 2rem;
+  }
+  
+  .quiz-container {
     max-width: 900px;
-    margin: 50px auto;
-    padding: 20px;
+    margin: 60px auto;
+    padding: 30px;
     background-color: #f8f9fa;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.question-header {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card {
+    border: none;
+  }
+  
+  #timer-container {
+    margin-bottom: 20px;
+  }
+  
+  #timer {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #dc3545;
+  }
+  
+  #timer-bar {
+    height: 8px;
+    background-color: #28a745;
+    border-radius: 4px;
+    margin-top: 8px;
+    width: 100%;
+    transition: width 1s linear;
+  }
+  
+  .question-header {
     font-size: 1.3rem;
     font-weight: bold;
     margin-bottom: 10px;
+  }
+  
+  .question {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  
+  .options {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .options li {
+    margin-bottom: 12px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .options li:hover {
+    background-color: #f1faff;
+  }
+  
+  .options li input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  .options li label {
+    font-size: 1.1rem;
+    margin: 0;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .correct-answer {
+    background-color: #28a745 !important;
+    color: white !important;
+    border-color: #218838 !important;
+  }
+  
+  .incorrect-answer {
+    background-color: #dc3545 !important;
+    color: white !important;
+    border-color: #c82333 !important;
+  }
+  
+  .btn-check-answer,
+  .btn-next-question {
+    margin-top: 20px;
+    float: right;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-check-answer:hover,
+  .btn-next-question:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .result {
+    margin-top: 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #343a40;
+  }
+  
+
+/* === SCORE PAGE === */
+.score-container {
+    max-width: 700px;
+    margin: 100px auto;
+    padding: 20px;
 }
 
-.question {
+.result-card {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    padding: 40px 30px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.result-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.result-card h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #343a40;
     margin-bottom: 20px;
 }
 
-.options {
-    list-style-type: none;
-    padding: 0;
-}
-
-.options li {
+.score-text,
+.score-percentage {
+    font-size: 1.2rem;
+    color: #343a40;
     margin-bottom: 10px;
 }
 
-.options li label {
-    font-size: 1.1rem;
-    margin-left: 10px;
-}
-
-.correct-answer {
-    background-color: #28a745;
-    color: white;
-}
-
-.incorrect-answer {
-    background-color: #dc3545;
-    color: white;
-}
-
-.btn-check-answer, .btn-next-question {
-    margin-top: 15px;
-    float: right;
-}
-
-.result {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-/* Timer Styling */
-#timer {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    color: #dc3545;
-}
-
-.nav-link.active {
-    color: red !important; /* Red text color for the active page */
-}
-
-
-/* Bar Council Page Styling (Updated for Consistency) */
-
-/* Custom Box */
-.custom-box {
-    background-color: #f8f9fa; /* Match overall light background */
-    border: 1px solid #c9d4f1;
-    border-radius: 10px; /* Rounded corners like cards */
-    padding: 20px; /* Inner padding for a clean look */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow like other sections */
-    margin-bottom: 2rem;
-}
-
-/* Bar Council Page Styling (Smooth and Consistent) */
-
-/* Custom Box */
-.custom-box {
-    background-color: #f8f9fa; /* Light background for consistency */
-    border: 1px solid #c9d4f1;
-    border-radius: 10px; /* Rounded corners like cards */
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    margin-bottom: 2rem;
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth hover transitions */
-}
-
-/* Optional: Slight lift on hover */
-.custom-box:hover {
-  
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-}
-
-/* Custom Button */
-.custom-btn {
-    background-color: #ffffff; /* Neutral clean base */
-    border: 1px solid #343a40;
-    margin-bottom: 15px;
+.feedback {
     font-size: 1.1rem;
     font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 20px;
+}
+
+.result-card .btn {
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 600;
     border-radius: 8px;
-    color: #343a40;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    margin: 10px 10px 0 10px;
 }
 
-/* Icon Inside Button */
-.custom-btn i {
-    margin-right: 10px;
-    transition: color 0.3s ease;
+.result-card .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* Hover Effect for Button */
-.custom-btn:hover {
-    background-color: #343a40; /* Darken background */
-    color: #ffffff; /* White text */
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2); /* Softer, deeper hover shadow */
-    transform: translateY(-3px) scale(1.03); /* Light lift and smooth zoom */
-}
-
-
-/* bar council  */
-
-
-
-/* Study Options Page Styling - Consistent Smooth Design */
-
-/* Main Box */
-.study-box {
+/* === BAR COUNCIL & STUDY OPTIONS === */
+.custom-box {
     background-color: #f8f9fa;
     border: 1px solid #c9d4f1;
     border-radius: 10px;
-    padding: 30px;
+    padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.study-box:hover {
-   
+.custom-box:hover {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* Study Buttons */
+.custom-btn,
 .study-btn {
     background-color: #ffffff;
     border: 1px solid #343a40;
@@ -288,12 +330,13 @@ footer p {
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+.custom-btn i,
 .study-btn i {
     margin-right: 10px;
     transition: color 0.3s ease;
 }
 
-/* Hover effect for buttons */
+.custom-btn:hover,
 .study-btn:hover {
     background-color: #343a40;
     color: #ffffff;
@@ -301,7 +344,9 @@ footer p {
     transform: translateY(-3px) scale(1.03);
 }
 
-/* Fix focus/active/visited blue flash */
+.custom-btn:focus,
+.custom-btn:active,
+.custom-btn:visited,
 .study-btn:focus,
 .study-btn:active,
 .study-btn:visited {
@@ -311,4 +356,36 @@ footer p {
     outline: none;
     border-color: #343a40;
 }
-/* Study Buttons */
+
+.study-box {
+    background-color: #f8f9fa;
+    border: 1px solid #c9d4f1;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.study-box:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* start */
+#start-screen {
+    margin-top: 50px;
+  }
+  
+  #startBtn {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  
+  #startBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+  
